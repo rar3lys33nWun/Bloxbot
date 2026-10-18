@@ -1,20 +1,21 @@
-# BloxBot
+# BloxBot 3.1
 
-BloxBot is a public-source opportunity discovery prototype built with Streamlit.
+A Streamlit public-source opportunity discovery prototype designed to search for **individuals and companies**: freelancers, independent professionals, potential clients, creators/collaborators, businesses, jobs, grants, suppliers, and public opportunities.
 
-## Features
-- Search publicly accessible web results for opportunities, jobs, freelance work, grants, business leads, and public community discussions.
-- Optionally inspect accessible public webpages for contact addresses explicitly published for professional use.
-- Review results and export CSV or Excel files.
+## Deploy on Streamlit Community Cloud
 
-## Run locally
-```bash
-pip install -r requirements.txt
-streamlit run bloxbot.py
-```
+Put these files in the root of your GitHub repository:
+- `bloxbot.py`
+- `requirements.txt`
+- `README.md`
 
-## Streamlit Community Cloud
-Set the main file path to `bloxbot.py`.
+Choose `bloxbot.py` as the app's main file.
 
-## Important limitations
-This prototype does not send email, run scheduled background searches, access private groups, bypass logins or access controls, collect private session cookies, or guess personal email addresses. Search results and contact details require human review and lawful use.
+## Notes
+
+- Maximum search depth runs multiple different query angles; results depend on the search provider, region, and source availability. It cannot guarantee 500 results in every search.
+- Entity type and relevance scores are heuristic hints and should be reviewed.
+- A published email is not proof that an inbox is active or that its owner has consented to marketing. Only contact people where there is an appropriate legal basis and comply with opt-out requirements.
+- Public social/profile pages are not guaranteed to be fetchable. The app does not bypass logins or access controls.
+- The suppression list and results are session-only; use persistent storage and authenticated webhooks before production use.
+- The Resend mailer is a prototype and should not be used for unsolicited bulk email.
